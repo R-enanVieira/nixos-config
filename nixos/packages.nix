@@ -2,7 +2,7 @@
 {
 	nixpkgs.config = {
 		allowUnfree = true;
-		permittedInsecurePackages = [ "electron-25.9.0" ];
+		permittedInsecurePackages = [ "python-2.7.18.8" "electron-25.9.0" ];
 	};
 
 	environment.systemPackages = with pkgs; [
@@ -24,7 +24,7 @@
 		docker
 		nodejs
 		python
-		#(python3.withPackages (ps: with ps; [request]))
+		(python3.withPackages (ps: with ps; [ requests ]))
 
 		# CLI
  		neofetch
@@ -45,7 +45,7 @@
 		swww #animated wallpaper daemon for wayland
 		lazygit
 		bluez #official linux bluetooth protocol
-		bluezz-tools
+		bluez-tools
 		
 		# Wayland stuff
 		xwayland
@@ -57,15 +57,7 @@
 		pulseaudio
 
 		# GPU stuff
-		nvidia
-		nvidia-x11
-		nvidia-powerd
 		mesa
-		libgl
-		libvulkanl
-		mesa-vulkan-drivers
-		cuda
-		openclPackages.nvidia
 
 		#Other
 		home-manager
