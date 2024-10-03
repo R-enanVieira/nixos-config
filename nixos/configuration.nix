@@ -12,6 +12,13 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPatches = [
+    {
+      name = "uvc_driver_patch";
+      patch = /home/renan/uvc.patch;
+    }
+  ];
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   
@@ -88,7 +95,7 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
 
   # Install firefox.
   programs.firefox.enable = true;

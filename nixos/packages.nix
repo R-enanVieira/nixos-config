@@ -9,6 +9,7 @@
 		# Desktop apps
 		chromium
     		postman
+		gparted
 		obs-studio
 		mpv
     		vscode
@@ -20,6 +21,7 @@
     		bitwarden-desktop
 
 		# Coding stuff
+		gnumake
 		gcc
 		docker
 		nodejs
@@ -61,6 +63,9 @@
 
 		#Other
 		home-manager
+		libsForQt5.qtstyleplugin-kvantum
+    		libsForQt5.qt5ct	
+		linuxHeaders
 	];
 
 	fonts.packages = with pkgs; [
