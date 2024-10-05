@@ -5,5 +5,6 @@
 		./env.nix
 		./hyprland.nix
 		./user.nix
+		./nm.nix
 	];
 }
