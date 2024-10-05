@@ -3,7 +3,7 @@
 	programs.zsh = {
 		enable = true;
 		enableCompletion = true;
-		enableautoSuggestions.enable = true;
+		autosuggestion.enable = true;
 		syntaxHighlighting.enable = true;
 
 		shellAliases =
@@ -12,7 +12,7 @@
 		in {
 			rb = "sudo nixos-rebuild switch --flake ${flakePath}";
 			upd = "nix flake update ${flakePath}";
-			rb = "sudo nixos-rebuild switch --upgrade --flake ${flakePath}";
+			upg = "sudo nixos-rebuild switch --upgrade --flake ${flakePath}";
 			
 			hms = "home-manager switch --flake ${flakePath}";
 

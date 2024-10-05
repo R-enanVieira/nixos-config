@@ -12,6 +12,7 @@
 		gparted
 		obs-studio
 		mpv
+		alacritty
     		vscode
     		whatsapp-for-linux
     		telegram-desktop
