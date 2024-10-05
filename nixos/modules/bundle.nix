@@ -4,7 +4,8 @@
 		./bootloader.nix
 		./env.nix
 		./hyprland.nix
-		./user.nix
 		./nm.nix
+		./sound.nix
+		./user.nix
 	];
 }
