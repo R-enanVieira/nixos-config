@@ -6,7 +6,7 @@
 	};
 
 	imports = [
-		./bash.nix
+		./zsh.nix
 	];
 
 	programs.neovim = {
