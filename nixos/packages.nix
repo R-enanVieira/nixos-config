@@ -35,6 +35,7 @@
 		wget
 		nix-index
 		unzip
+		ranger
     		btop
 		git
 		github-cli
