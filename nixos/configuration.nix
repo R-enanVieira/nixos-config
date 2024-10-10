@@ -9,7 +9,7 @@
     ];
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
+
   nix.gc = {
     automatic = true;
     dates = "weekly";
@@ -52,7 +52,9 @@
   # };
 
   # List services that you want to enable:
-  
+
+  services.libinput.enable = true;
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 

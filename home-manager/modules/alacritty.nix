@@ -13,7 +13,7 @@
 				};
 			};
 
-			colors.primary.background = "1d2021";
+			colors.primary.background = "#1d2021";
 		};
 	};
 }

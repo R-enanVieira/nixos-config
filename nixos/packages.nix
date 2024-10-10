@@ -11,6 +11,9 @@
     		postman
 		gparted
 		obs-studio
+		rofi
+		wofi
+		dolphin
 		mpv
 		alacritty
     		vscode
@@ -19,6 +22,8 @@
     		discord
     		spotify
     		obsidian
+		qastools
+		pavucontrol
     		bitwarden-desktop
 
 		# Coding stuff
@@ -55,6 +60,16 @@
 		xwayland
 		wl-clipboard
 		cliphist
+
+		# WM's stuff
+		herbstluftwm
+		hyprland
+		hyprlock
+		swaynotificationcenter
+		seatd
+		xdg-desktop-portal-hyprland
+		polybar
+		waybar
 
 		# Sound
 		pipewire

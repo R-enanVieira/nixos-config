@@ -4,7 +4,7 @@
 		users.renan = {
     			isNormalUser = true;
     			description = "Renan Vieira";
-    			extraGroups = [ "networkmanager" "wheel" ];
+    			extraGroups = [ "networkmanager" "wheel" "audio" "video" "docker" ];
     			packages = with pkgs; [];
 		};
 	};

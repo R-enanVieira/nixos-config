@@ -7,8 +7,9 @@
 
 	imports = [
 		./zsh.nix
+		./modules/bundle.nix
 	];
-
+	
 	programs.neovim = {
 		enable = true;
 		defaultEditor = true;
