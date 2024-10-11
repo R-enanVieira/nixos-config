@@ -1,5 +1,10 @@
 {
 	 services = {
+	 	displayManager.autoLogin = {
+			enable = true;
+			user = "renan";
+		};
+
 	 	libinput.enable = true;
 		gvfs.enable = true;
 		dbus.enable = true;
