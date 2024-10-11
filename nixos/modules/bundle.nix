@@ -6,6 +6,7 @@
 		./hyprland.nix
 		./nm.nix
 		./security.nix
+		./services.nix
 		./sound.nix
 		./user.nix
 		./xserver.nix
