@@ -2,7 +2,7 @@
 	services.xserver = {
 		enable = true;
 		windowManager.herbstluftwm.enable = true;
-
+		
 		xkb.layout = "br";
 		xkb.variant =  "nodeadkeys";
 
