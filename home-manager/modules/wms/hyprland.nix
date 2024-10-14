@@ -26,7 +26,7 @@
 				"SDL_VIDEODRIVER,wayland"
 				"CLUTTER_BACKEND,wayland"
 				"GTK_THEME,Gruvbox-Green-Dark" 
-				"XDG_SCREENSHOTS_DIR,~/screens"
+				"XDG_SCREENSHOTS_DIR,~/Pictures/Screenshots"
 			];
 
 			debug = {
@@ -213,8 +213,9 @@
 				''$mainMod SHIFT, H, exec, alacritty -e zsh -c "nvim ~/nix/home-manager/modules/wms/hyprland.nix"''
 				''$mainMod SHIFT, W, exec, alacritty -e zsh -c "nvim ~/nix/home-manager/modules/wms/waybar.nix''
 				#'', Print, exec, grim -g "$(slurp)" - | swappy -f -''
-				'', Print, exec, grimblast --notify --cursor --freeze save area ~/Pictures/Screenshots$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png''
-
+				''$mainMod, Print, exec, grimblast --notify --cursor --freeze save area ~/Pictures/Screenshots$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png''
+				'',Print, exec, grimblast --notify --cursor --freeze copy area''
+				
 				# Waybar
 				"$mainMod, B, exec, pkill -SIGUSR1 waybar"
 				"$mainMod, W, exec, pkill -SIGUSR2 waybar"

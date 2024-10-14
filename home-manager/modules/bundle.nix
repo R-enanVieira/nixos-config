@@ -7,5 +7,6 @@
 		./wms/hyprland.nix
 		./wms/waybar.nix
 		./wms/hyprlock.nix
+		./wms/wofi.nix
 	];
 }

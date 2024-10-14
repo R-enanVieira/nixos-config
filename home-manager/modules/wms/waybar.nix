@@ -7,9 +7,15 @@
 				position = "top";
 				margin = "9 13 -10 18";
 
-				modules-left = [ "hyprland/workspaces" "hyprland/language" "keyboard-state" "hyprland/submap" ];
+				modules-left = [ "custom/launcher" "hyprland/workspaces" "hyprland/language" "keyboard-state" ];
 				modules-center = [ "clock" "custom/weather" ];
 				modules-right = [ "pulseaudio" "custom/mem" "cpu" "temperature" "backlight" "battery" "tray" ];
+				
+				"custom/launcher" = {
+					format = "";
+					on-click = "wofi --show drun";
+					tooltip = false;
+				};
 
 				"hyprland/workspaces" = {
 					disable-scroll = true;
@@ -35,10 +41,10 @@
 					tooltip = false;
 				};
 
-				"keyboard/state" = {
+				"keyboard-state" = {
 					numlock = true;
 					capslock = true;
-					format = "{icon} ";
+					format = "{name} {icon}";
 					format-icons = {
 						locked = " ";
 						unlocked = " ";
@@ -123,7 +129,7 @@
 				};
 
 			};
-		};
+			};
 
 		style = 
 			''
@@ -142,6 +148,15 @@
 
 				window#waybar.hidden {
 				    opacity: 0.2;
+				}
+
+				#custom-launcher {
+				    font-size: 20px;
+				    color: #90b1b1;
+				    font-weight: bold;
+				    margin-left: 15px;
+				    padding-right: 10px;
+				    border-bottom: 2px solid #1D2021;
 				}
 
 				#workspaces {
@@ -193,33 +208,6 @@
 				    margin-right: 8px;
 				    padding-right: 16px;
 				    border-radius: 0px 10px 10px 0px;
-				    transition: none;
-				    color: #ffffff;
-				    background: #383c4a;
-				}
-
-				#custom-pacman {
-				    padding-left: 16px;
-				    padding-right: 8px;
-				    border-radius: 10px 0px 0px 10px;
-				    transition: none;
-				    color: #ffffff;
-				    background: #383c4a;
-				}
-
-				#custom-mail {
-				    margin-right: 8px;
-				    padding-right: 16px;
-				    border-radius: 0px 10px 10px 0px;
-				    transition: none;
-				    color: #ffffff;
-				    background: #383c4a;
-				}
-
-				#submap {
-				    padding-left: 16px;
-				    padding-right: 16px;
-				    border-radius: 10px;
 				    transition: none;
 				    color: #ffffff;
 				    background: #383c4a;
