@@ -5,7 +5,7 @@
 		settings = {
 			hide_scroll = true;
 			show = "drun";
-			width = 30%;
+			width = "40%";
 			lines = 8;
 			line_wrap = "word";
 			term = "alacritty";
@@ -37,13 +37,14 @@
 				  background: #1d2021;
 				  margin: auto;
 				  padding: 10px;
-				  border-radius: 20px;
-				  border: 5px solid #33ccff;
+				  border-radius: 10px;
+				  border: 2px solid #22DDDC;
 				}
 
 				#input {
 				  padding: 10px;
 				  margin-bottom: 10px;
+				  border: 1px solid #2BD5ED;
 				  border-radius: 15px;
 				}
 
@@ -67,6 +68,6 @@
 				#text {
 				  margin: 2px;
 				}
-			''
+			'';
 	};
 }
