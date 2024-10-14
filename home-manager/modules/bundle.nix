@@ -1,6 +1,7 @@
 {
 	imports = [
 		./alacritty.nix
+		./cursor.nix
 		./git.nix
 		./qt.nix
 		./wms/hyprland.nix
