@@ -93,7 +93,7 @@
 					inner_color = "rgba(225, 225, 225, 0.2)";
 					outer_color = "rgba(255, 255, 255, 0)";
 					outline_thickness = 0;
-					placeholder_text = ''<i><span foreground="##cad3f5">Password...</span></i>'';
+					placeholder_text = ''<i><span foreground="##ebdbb2e5">Enter Password...</span></i>'';
 					hide_input = false;
 					shadow_passes = 2;
 					halign = "center";

@@ -9,12 +9,23 @@
 			 monitor = [ "eDP-1,1920x1080@144,0x0,1" "HDMI-A-1,1600x900@75, -1600x0,1" ];
 
 			env = [
+				"__GL_GSYNC_ALLOWED,0"
+				"__GL_VRR_ALLOWED,0"
+				"_JAVA_AWT_WM_NONEREPARENTING,1"
+				"DISABLE_QT5_COMPAT,0"
+				"GDK_BACKEND,wayland"
+				"MOZ_ENABLE_WAYLAND,1"
 				"XDG_CURRENT_DESKTOP,Hyprland"
 				"XDG_SESSION_TYPE,wayland"
 				"XDG_SESSION_DESKTOP,Hyprland"
 				"XCURSOR_SIZE,36"
+				"QT_AUTO_SCREEN_SCALE_FACTOR,1"
+				"QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
 				"QT_QPA_PLATFORM,wayland"
 				"QT_QPA_PLATFORMTHEME,qt5ct"
+				"SDL_VIDEODRIVER,wayland"
+				"CLUTTER_BACKEND,wayland"
+				"GTK_THEME,Gruvbox-Green-Dark" 
 				"XDG_SCREENSHOTS_DIR,~/screens"
 			];
 
@@ -112,11 +123,14 @@
 
 			exec-once = [
 				"swww init"
-				"swww img ~/Pictures/Wallpapers/otherWallpaper/nixos/nixos_blue.png"
-				"waybar"
+				"swww img Wallpapers/otherWallpaper/nixos/nixos_blue.png"
+				
+				"nm-applet &"
+				"blueman-applet &"
+				"waybar &"
 				"wl-paste --type text --watch cliphist store"
 				"wl-paste --type image --watch cliphist store"
-				"blueman-services &"
+				
 				"hyprlock"
 			];
 
@@ -198,7 +212,8 @@
 				''$mainMod SHIFT, C, exec, alacritty -e zsh -c "conf"''
 				''$mainMod SHIFT, H, exec, alacritty -e zsh -c "nvim ~/nix/home-manager/modules/wms/hyprland.nix"''
 				''$mainMod SHIFT, W, exec, alacritty -e zsh -c "nvim ~/nix/home-manager/modules/wms/waybar.nix''
-				'', Print, exec, grim -g "$(slurp)" - | swappy -f -''
+				#'', Print, exec, grim -g "$(slurp)" - | swappy -f -''
+				'', Print, exec, grimblast --notify --cursor --freeze save area ~/Pictures/Screenshots$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png''
 
 				# Waybar
 				"$mainMod, B, exec, pkill -SIGUSR1 waybar"

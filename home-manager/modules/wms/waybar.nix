@@ -9,7 +9,7 @@
 
 				modules-left = [ "hyprland/workspaces" "hyprland/language" "keyboard-state" "hyprland/submap" ];
 				modules-center = [ "clock" "custom/weather" ];
-				modules-right = [ "pulseaudio" "custom/mem" "cpu" "backlight" "battery" "tray" ];
+				modules-right = [ "pulseaudio" "custom/mem" "cpu" "temperature" "backlight" "battery" "tray" ];
 
 				"hyprland/workspaces" = {
 					disable-scroll = true;
@@ -45,11 +45,16 @@
 					};
 				};
 
+				"clock" = {
+					tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+					format = "{:%a, %d %b, %I:%M %p}";
+				};
+
 				"custom/weather" = {
 					format = "{}";
 					tooltip = true; 
 					interval = 1800;
-					exec = "$HOME/.config/waybar/scripts/wttr.py";
+					exec = "python3 $HOME/.config/waybar/scripts/wttr.py";
 					return-type = "json";
 				};
 
@@ -57,18 +62,12 @@
 					# scroll-step = 1; # %, can be a float
 					reverse-scrolling = 1;
 					format = "{volume}% {icon} {format_source}";
-					format-bluetooth = "{volume}% {icon} {format_source}";
-					format-bluetooth-muted = " {icon} {format_source}";
 					format-muted = " {format_source}";
 					format-source = "{volume}% ";
 					format-source-muted = "";
 					format-icons = {
 						    headphone = "";
-						    hands-free = "";
 						    headset = "";
-						    phone = "";
-						    portable = "";
-						    car = "";
 						    default = ["" "" ""];
 					};
 					on-click = "pavucontrol";
@@ -89,10 +88,10 @@
 				};
 
 				"temperature" = {
-					# thermal-zone = 2;
-					# hwmon-path = "/sys/class/hwmon/hwmon2/temp1_input";
+					thermal-zone = 0;
+					hwmon-path = "/sys/class/hwmon/hwmon5/temp1_input";
 					critical-threshold = 80;
-					# format-critical = "{temperatureC}°C {icon}";
+					format-critical = "{temperatureC}°C {icon}";
 					format = "{temperatureC}°C {icon}";
 					format-icons = ["" "" "" "" ""];
 					tooltip = false;
