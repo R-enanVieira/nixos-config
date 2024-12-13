@@ -1,8 +1,7 @@
-{ host, ... }:
-let
+{host, ...}: let
   custom = {
     font = "Maple Mono";
-    font_size = "18px";
+    font_size = "12px";
     font_weight = "bold";
     text_color = "#FBF1C7";
     background_0 = "#1D2021";
@@ -18,10 +17,9 @@ let
     opacity = "1";
     indicator_height = "2px";
   };
-in
-{
+in {
   programs.waybar.settings.mainBar = with custom; {
-    position = "bottom";
+    position = "top";
     layer = "top";
     height = 28;
     margin-top = 0;
@@ -33,11 +31,15 @@ in
       "hyprland/workspaces"
       "tray"
     ];
-    modules-center = [ "clock" ];
+    modules-center = ["clock"];
     modules-right = [
       "cpu"
       "memory"
-      (if (host == "desktop") then "disk" else "")
+      (
+        if (host == "desktop")
+        then "disk"
+        else ""
+      )
       "pulseaudio"
       "network"
       "battery"
@@ -71,13 +73,6 @@ in
         "9" = "IX";
         "10" = "X";
         sort-by-number = true;
-      };
-      persistent-workspaces = {
-        "1" = [ ];
-        "2" = [ ];
-        "3" = [ ];
-        "4" = [ ];
-        "5" = [ ];
       };
     };
     cpu = {
@@ -113,7 +108,7 @@ in
       format = "{icon} {volume}%";
       format-muted = "<span foreground='${blue}'> </span> {volume}%";
       format-icons = {
-        default = [ "<span foreground='${blue}'> </span>" ];
+        default = ["<span foreground='${blue}'> </span>"];
       };
       scroll-step = 2;
       on-click = "pamixer -t";

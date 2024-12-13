@@ -35,7 +35,6 @@ in
 
     window#waybar {
       background: #282828;
-      border-top: 1px solid #928374;
     }
 
     tooltip {
@@ -48,13 +47,12 @@ in
     }
 
     #workspaces {
-      padding-left: 15px;
+      padding-left: 10px;
     }
     #workspaces button {
       color: ${yellow};
       padding-left:  5px;
       padding-right: 5px;
-      margin-right: 10px;
     }
     #workspaces button.empty {
       color: ${text_color};
@@ -80,19 +78,17 @@ in
       padding: 1px;
     }
 
-    #pulseaudio, #network, #cpu, #memory, #disk, #battery, #custom-notification {
+    #pulseaudio, #cpu, #memory, #disk, #battery, #custom-notification {
       padding-left: 5px;
-      padding-right: 5px;
       margin-right: 10px;
       color: ${text_color};
-    }
-
-    #pulseaudio {
-      margin-left: 15px;
+		    }
+    #network {
+      padding-left: 5px;
     }
 
     #custom-notification {
-      margin-left: 15px;
+      margin-left: 10px;
       padding-right: 2px;
       margin-right: 5px;
     }

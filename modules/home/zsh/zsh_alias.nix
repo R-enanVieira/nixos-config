@@ -26,6 +26,7 @@
       open = "xdg-open";
       space = "ncdu";
       man = "BAT_THEME='default' batman";
+      nvim = "nix run github:R-enanVieira/frosty-nvim";
 
       l = "eza --icons  -a --group-directories-first -1"; # EZA_ICON_SPACING=2
       ll = "eza --icons  -a --group-directories-first -1 --no-user --long";

@@ -1,7 +1,8 @@
-{ ... }:
-{
+{...}: {
   wayland.windowManager.hyprland = {
     settings = {
+      monitor = ["eDP-1,1920x1080@144,0x0,1" "HDMI-A-1,1600x900@75, -1600x0,1"];
+
       # autostart
       exec-once = [
         "systemctl --user import-environment &"
@@ -9,6 +10,7 @@
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &"
 
         "nm-applet &"
+        "blueman-applet &"
         "poweralertd &"
         "wl-clip-persist --clipboard both &"
         "wl-paste --watch cliphist store &"
@@ -25,10 +27,10 @@
       ];
 
       input = {
-        kb_layout = "us,fr";
+        kb_layout = "br,us";
         kb_options = "grp:alt_caps_toggle";
         numlock_by_default = true;
-        follow_mouse = 0;
+        follow_mouse = 1;
         float_switch_override_focus = 0;
         mouse_refocus = 0;
         sensitivity = 0;
@@ -42,7 +44,7 @@
         layout = "dwindle";
         gaps_in = 5;
         gaps_out = 10;
-        border_size = 2;
+        border_size = 3;
         "col.active_border" = "rgb(A89984)";
         "col.inactive_border" = "0x00000000";
         border_part_of_window = false;
@@ -78,7 +80,7 @@
       };
 
       decoration = {
-        rounding = 0;
+        rounding = 10;
         # active_opacity = 0.90;
         # inactive_opacity = 0.90;
         # fullscreen_opacity = 1.0;
@@ -370,10 +372,9 @@
         "f[1], gapsout:0, gapsin:0"
       ];
     };
-
+    #monitor = eDP-1,1920x1080@144,0x0,1
+    #monitor = HDMI-A-1,1600x900@75, -1600x0,1
     extraConfig = "
-      monitor=,preferred,auto,auto
-
       xwayland {
         force_zero_scaling = true
       }
